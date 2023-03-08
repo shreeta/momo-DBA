@@ -1,0 +1,571 @@
+--
+-- PostgreSQL database cluster dump
+--
+
+-- Started on 2023-03-08 23:46:26 IST
+
+SET default_transaction_read_only = off;
+
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+
+--
+-- Drop databases (except postgres and template1)
+--
+
+DROP DATABASE shreetarathor;
+
+
+
+
+--
+-- Drop roles
+--
+
+DROP ROLE momo;
+DROP ROLE postgres;
+DROP ROLE shreetarathor;
+
+
+--
+-- Roles
+--
+
+CREATE ROLE momo;
+ALTER ROLE momo WITH NOSUPERUSER INHERIT NOCREATEROLE NOCREATEDB NOLOGIN NOREPLICATION NOBYPASSRLS;
+CREATE ROLE postgres;
+ALTER ROLE postgres WITH SUPERUSER INHERIT CREATEROLE CREATEDB LOGIN REPLICATION BYPASSRLS;
+CREATE ROLE shreetarathor;
+ALTER ROLE shreetarathor WITH SUPERUSER INHERIT CREATEROLE CREATEDB LOGIN NOREPLICATION NOBYPASSRLS;
+
+--
+-- User Configurations
+--
+
+
+
+
+
+
+
+
+--
+-- Databases
+--
+
+--
+-- Database "template1" dump
+--
+
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 15.2
+-- Dumped by pg_dump version 15.1
+
+-- Started on 2023-03-08 23:46:26 IST
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+UPDATE pg_catalog.pg_database SET datistemplate = false WHERE datname = 'template1';
+DROP DATABASE template1;
+--
+-- TOC entry 3605 (class 1262 OID 1)
+-- Name: template1; Type: DATABASE; Schema: -; Owner: postgres
+--
+
+CREATE DATABASE template1 WITH TEMPLATE = template0 ENCODING = 'UTF8' LOCALE_PROVIDER = icu LOCALE = 'en_US.UTF-8' ICU_LOCALE = 'en-US';
+
+
+ALTER DATABASE template1 OWNER TO postgres;
+
+\connect template1
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- TOC entry 3606 (class 0 OID 0)
+-- Dependencies: 3605
+-- Name: DATABASE template1; Type: COMMENT; Schema: -; Owner: postgres
+--
+
+COMMENT ON DATABASE template1 IS 'default template for new databases';
+
+
+--
+-- TOC entry 3608 (class 0 OID 0)
+-- Name: template1; Type: DATABASE PROPERTIES; Schema: -; Owner: postgres
+--
+
+ALTER DATABASE template1 IS_TEMPLATE = true;
+
+
+\connect template1
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- TOC entry 3607 (class 0 OID 0)
+-- Dependencies: 3605
+-- Name: DATABASE template1; Type: ACL; Schema: -; Owner: postgres
+--
+
+REVOKE CONNECT,TEMPORARY ON DATABASE template1 FROM PUBLIC;
+GRANT CONNECT ON DATABASE template1 TO PUBLIC;
+
+
+-- Completed on 2023-03-08 23:46:26 IST
+
+--
+-- PostgreSQL database dump complete
+--
+
+--
+-- Database "postgres" dump
+--
+
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 15.2
+-- Dumped by pg_dump version 15.1
+
+-- Started on 2023-03-08 23:46:26 IST
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+DROP DATABASE postgres;
+--
+-- TOC entry 3605 (class 1262 OID 5)
+-- Name: postgres; Type: DATABASE; Schema: -; Owner: postgres
+--
+
+CREATE DATABASE postgres WITH TEMPLATE = template0 ENCODING = 'UTF8' LOCALE_PROVIDER = icu LOCALE = 'en_US.UTF-8' ICU_LOCALE = 'en-US';
+
+
+ALTER DATABASE postgres OWNER TO postgres;
+
+\connect postgres
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- TOC entry 3606 (class 0 OID 0)
+-- Dependencies: 3605
+-- Name: DATABASE postgres; Type: COMMENT; Schema: -; Owner: postgres
+--
+
+COMMENT ON DATABASE postgres IS 'default administrative connection database';
+
+
+-- Completed on 2023-03-08 23:46:26 IST
+
+--
+-- PostgreSQL database dump complete
+--
+
+--
+-- Database "shreetarathor" dump
+--
+
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 15.2
+-- Dumped by pg_dump version 15.1
+
+-- Started on 2023-03-08 23:46:26 IST
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- TOC entry 3642 (class 1262 OID 16385)
+-- Name: shreetarathor; Type: DATABASE; Schema: -; Owner: shreetarathor
+--
+
+CREATE DATABASE shreetarathor WITH TEMPLATE = template0 ENCODING = 'UTF8' LOCALE_PROVIDER = icu LOCALE = 'en_US.UTF-8' ICU_LOCALE = 'en-US';
+
+
+ALTER DATABASE shreetarathor OWNER TO shreetarathor;
+
+\connect shreetarathor
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- TOC entry 234 (class 1255 OID 16449)
+-- Name: Delegation_transfer_specification(character varying, character varying, character varying, character varying); Type: PROCEDURE; Schema: public; Owner: postgres
+--
+
+CREATE PROCEDURE public."Delegation_transfer_specification"(IN obj_in character varying, IN grantor_in character varying, IN grantee_in character varying, IN privilege_in character varying)
+    LANGUAGE plpgsql
+    AS $_$
+BEGIN
+IF (obj_in in (null,'') or grantor_in in (null,'') or grantee_in in (null,'') or privilege_in in (null,''))
+THEN
+	raise notice 'The value for obj, grantor and grantee should not be null';
+
+ELSEIF obj_in in (select obj from pab where obj = obj_in) 
+and (grantor_in in (select usr from owb where obj = obj_in)
+	 or  grantor_in in (select granteerevokee from gr 
+					 where obj = obj_in and concat(granteerevokee,' + G') = privilege_in))
+THEN
+
+insert into gr(grantorrevoker,privilege,granteerevokee,obj) values(grantor_in,privilege_in,grantee_in,obj_in);
+insert into dl(grantor,grantee,obj) values(grantor_in,grantee_in,obj_in);
+EXECUTE format('GRANT %1$I ON %2$I TO %3$I;',privilege_in,obj_in,grantee_in);
+
+--GRANT "privilege_in" ON "obj_in" TO "granteerevokee" WITH GRANT OPTION;
+
+ELSE
+	raise notice 'The obj does not exists or obj does not have valid specification for quorum setup';
+END IF;
+
+END;
+
+$_$;
+
+
+ALTER PROCEDURE public."Delegation_transfer_specification"(IN obj_in character varying, IN grantor_in character varying, IN grantee_in character varying, IN privilege_in character varying) OWNER TO postgres;
+
+--
+-- TOC entry 224 (class 1255 OID 16440)
+-- Name: Owner_curator_specification(character varying, character varying); Type: PROCEDURE; Schema: public; Owner: postgres
+--
+
+CREATE PROCEDURE public."Owner_curator_specification"(IN obj_in character varying, IN user_in character varying)
+    LANGUAGE plpgsql
+    AS $$
+BEGIN
+IF (obj_in in (null,'') or user_in in (null,''))
+THEN
+	raise notice 'The value for obj and user should not be null';
+
+ELSEIF obj_in in (select obj from pab where obj = obj_in) 
+  
+THEN
+
+insert into owb(obj,usr) values(obj_in,user_in);
+
+ELSE
+	raise notice 'The obj does not exists';
+END IF;
+
+END;
+
+$$;
+
+
+ALTER PROCEDURE public."Owner_curator_specification"(IN obj_in character varying, IN user_in character varying) OWNER TO postgres;
+
+--
+-- TOC entry 232 (class 1255 OID 16412)
+-- Name: PAB_create_proc(character varying, character varying, character varying, character varying, character varying, character varying, character varying); Type: PROCEDURE; Schema: public; Owner: postgres
+--
+
+CREATE PROCEDURE public."PAB_create_proc"(IN obj_in character varying, IN ps_in character varying, IN delegation_in character varying, IN transfer_in character varying, IN acceptance_in character varying, IN revoked_in character varying, IN vote_in character varying)
+    LANGUAGE plpgsql
+    AS $$
+BEGIN 
+
+IF(obj_in in (null,'') or ps_in in (null,'') )
+then
+	
+	raise notice 'The value for obj and ps should not be null';
+
+ELSEIF(	delegation_in not in ('True','False') 
+		or transfer_in not in ('True','False',null)
+		or acceptance_in not in ('True','False',null)
+		or revoked_in not in ('revoke','grantor-transfer',null)
+		or vote_in not in ('quorum','totality',null)
+	   )
+Then
+	raise notice 'Incorrect values for delegation, transfer, acceptance, revoked or vote';
+Else
+ 
+insert into pab(obj,ps,delegation,transfer,acceptance,revoked,vote) 
+values(obj_in,ps_in,delegation_in,transfer_in,acceptance_in,revoked_in,vote_in);
+END IF;
+END
+$$;
+
+
+ALTER PROCEDURE public."PAB_create_proc"(IN obj_in character varying, IN ps_in character varying, IN delegation_in character varying, IN transfer_in character varying, IN acceptance_in character varying, IN revoked_in character varying, IN vote_in character varying) OWNER TO postgres;
+
+--
+-- TOC entry 233 (class 1255 OID 16441)
+-- Name: Quorum_specification(character varying, character varying); Type: PROCEDURE; Schema: public; Owner: postgres
+--
+
+CREATE PROCEDURE public."Quorum_specification"(IN obj_in character varying, IN num_in character varying)
+    LANGUAGE plpgsql
+    AS $$
+BEGIN
+IF (obj_in in (null,'') or num_in in (null,''))
+THEN
+	raise notice 'The value for obj and user should not be null';
+
+ELSEIF obj_in in (select obj from pab where obj = obj_in) 
+  and 'quorum' = (select vote_in from pab where obj = obj_in)
+THEN
+
+insert into quorumS(obj,usr) values(obj_in,num_in);
+
+ELSE
+	raise notice 'The obj does not exists or obj does not have valid specification for quorum setup';
+END IF;
+
+END;
+
+$$;
+
+
+ALTER PROCEDURE public."Quorum_specification"(IN obj_in character varying, IN num_in character varying) OWNER TO postgres;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- TOC entry 216 (class 1259 OID 16402)
+-- Name: dl; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.dl (
+    grantor character varying,
+    grantee character varying,
+    obj character varying,
+    dt_type character varying
+);
+
+
+ALTER TABLE public.dl OWNER TO postgres;
+
+--
+-- TOC entry 217 (class 1259 OID 16407)
+-- Name: gr; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.gr (
+    "time" timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
+    grantorrevoker character varying,
+    privilege character varying,
+    granteerevokee character varying,
+    obj character varying
+);
+
+
+ALTER TABLE public.gr OWNER TO postgres;
+
+--
+-- TOC entry 215 (class 1259 OID 16397)
+-- Name: owb; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.owb (
+    obj character varying,
+    usr character varying
+);
+
+
+ALTER TABLE public.owb OWNER TO postgres;
+
+--
+-- TOC entry 214 (class 1259 OID 16390)
+-- Name: pab; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.pab (
+    obj character varying NOT NULL,
+    ps character varying,
+    delegation character varying,
+    transfer character varying,
+    acceptance character varying,
+    revoked character varying,
+    vote character varying
+);
+
+
+ALTER TABLE public.pab OWNER TO postgres;
+
+--
+-- TOC entry 218 (class 1259 OID 16442)
+-- Name: quorums; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.quorums (
+    obj character varying,
+    num character varying
+);
+
+
+ALTER TABLE public.quorums OWNER TO postgres;
+
+--
+-- TOC entry 219 (class 1259 OID 16452)
+-- Name: test1000; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.test1000 (
+    employee character varying,
+    department character varying,
+    salary character varying
+);
+
+
+ALTER TABLE public.test1000 OWNER TO postgres;
+
+--
+-- TOC entry 3633 (class 0 OID 16402)
+-- Dependencies: 216
+-- Data for Name: dl; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.dl (grantor, grantee, obj, dt_type) VALUES ('shree', 'momo', 'test1000', NULL);
+INSERT INTO public.dl (grantor, grantee, obj, dt_type) VALUES ('shree', 'momo', 'test1000', NULL);
+INSERT INTO public.dl (grantor, grantee, obj, dt_type) VALUES ('shree', 'momo', 'test1000', NULL);
+
+
+--
+-- TOC entry 3634 (class 0 OID 16407)
+-- Dependencies: 217
+-- Data for Name: gr; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.gr ("time", grantorrevoker, privilege, granteerevokee, obj) VALUES ('2023-03-04 23:41:23.755792', 'shree', 'select + G', 'momo', 'test1000');
+INSERT INTO public.gr ("time", grantorrevoker, privilege, granteerevokee, obj) VALUES ('2023-03-05 00:36:59.70887', 'shree', 'select', 'momo', 'test1000');
+
+
+--
+-- TOC entry 3632 (class 0 OID 16397)
+-- Dependencies: 215
+-- Data for Name: owb; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.owb (obj, usr) VALUES ('test1000', 'shree');
+
+
+--
+-- TOC entry 3631 (class 0 OID 16390)
+-- Dependencies: 214
+-- Data for Name: pab; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+INSERT INTO public.pab (obj, ps, delegation, transfer, acceptance, revoked, vote) VALUES ('test', 'test', 'true', NULL, NULL, NULL, NULL);
+INSERT INTO public.pab (obj, ps, delegation, transfer, acceptance, revoked, vote) VALUES ('test1', 'test', 'true', NULL, NULL, NULL, NULL);
+INSERT INTO public.pab (obj, ps, delegation, transfer, acceptance, revoked, vote) VALUES ('test100', 'test', 't', NULL, NULL, NULL, NULL);
+INSERT INTO public.pab (obj, ps, delegation, transfer, acceptance, revoked, vote) VALUES ('test1000', 'test', NULL, NULL, NULL, NULL, NULL);
+
+
+--
+-- TOC entry 3635 (class 0 OID 16442)
+-- Dependencies: 218
+-- Data for Name: quorums; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 3636 (class 0 OID 16452)
+-- Dependencies: 219
+-- Data for Name: test1000; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+
+
+--
+-- TOC entry 3488 (class 2606 OID 16396)
+-- Name: pab pab_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.pab
+    ADD CONSTRAINT pab_pkey PRIMARY KEY (obj);
+
+
+--
+-- TOC entry 3643 (class 0 OID 0)
+-- Dependencies: 219
+-- Name: TABLE test1000; Type: ACL; Schema: public; Owner: postgres
+--
+
+GRANT SELECT ON TABLE public.test1000 TO momo;
+
+
+-- Completed on 2023-03-08 23:46:27 IST
+
+--
+-- PostgreSQL database dump complete
+--
+
+-- Completed on 2023-03-08 23:46:27 IST
+
+--
+-- PostgreSQL database cluster dump complete
+--
+
