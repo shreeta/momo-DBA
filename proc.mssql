@@ -1,0 +1,9 @@
+CALL public."PAB_create_proc"(
+	'test', 
+	'test', 
+	't', 
+	null, 
+	null, 
+	null, 
+	null
+)

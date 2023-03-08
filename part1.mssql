@@ -1,0 +1,38 @@
+--create role momo;
+
+CALL public."PAB_create_proc"(
+	'test1000', 
+	'test', 
+		null, 
+	null, 
+	null, 
+	null, 
+	null
+);
+
+CALL public."Owner_curator_specification"(
+	'trm', 
+	'shree'
+)
+
+CALL public."Delegation_transfer_specification"(
+	'test1000',
+	'shree',
+	'momo',
+	'select'
+)
+
+select * from pab;
+select * from owb;
+select * from gr;
+select current_timestamp;
+select concat(granteerevokee,'G') from gr 
+
+/* ALTER TABLE pab
+ADD PRIMARY KEY (obj); 
+ALTER TABLE pab ALTER  delegation Type varchar ;
+ALTER TABLE gr ALTER time set default current_timestamp ;
+delete from gr ;
+ALTER TABLE gr add column obj  varchar ;
+*/
+

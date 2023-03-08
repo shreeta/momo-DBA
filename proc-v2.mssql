@@ -1,0 +1,39 @@
+-- PROCEDURE: public.PAB_create_proc(character varying, character varying, character varying, character varying, character varying, character varying, character varying)
+
+-- DROP PROCEDURE IF EXISTS public."PAB_create_proc"(character varying, character varying, character varying, character varying, character varying, character varying, character varying);
+
+CREATE OR REPLACE PROCEDURE public."PAB_create_proc"(
+	IN obj_in character varying,
+	IN ps_in character varying,
+	IN delegation_in character varying,
+	IN transfer_in character varying,
+	IN acceptance_in character varying,
+	IN revoked_in character varying,
+	IN vote_in character varying)
+LANGUAGE 'plpgsql'
+AS $BODY$
+BEGIN 
+
+IF(obj_in in (null,'') or ps_in in (null,'') )
+then
+	
+	raise notice 'The value for obj and ps should not be null';
+
+ELSEIF(	delegation_in not in ('True','False') 
+		or transfer_in not in ('True','False')
+		or acceptance_in not in ('True','False')
+		or revoked_in not in ('rggevoke','grantor-transfer')
+		or vote_in not in ('quorum','totality')
+	   )
+Then
+	raise notice 'Incorrect values for delegation, transfer, acceptance, revoked or vote';
+Else
+ 
+insert into pab(obj,ps,delegation,transfer,acceptance,revoked,vote) 
+values(obj_in,ps_in,delegation_in,transfer_in,acceptance_in,revoked_in,vote_in);
+
+END IF;
+END
+$BODY$;
+ALTER PROCEDURE public."PAB_create_proc"(character varying, character varying, character varying, character varying, character varying, character varying, character varying)
+    OWNER TO postgres;
